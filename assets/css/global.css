@@ -1,0 +1,125 @@
+nav {
+    margin-bottom: 50px;
+}
+
+.steps.clearfix, .content.clearfix {
+    clear: none;
+}
+
+.steps {
+    width: 20%;
+    float: left;
+    display: inline;
+    border-left: 2px solid #9e9e9e;
+    position: relative;
+}
+
+.steps ul {
+    margin: 0;
+}
+
+.steps ul li {
+    margin-left: -26px;
+}
+
+.steps ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.steps ul li a {
+    color: #00acc1;
+    font-size: 19px;
+}
+
+.number {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: #c2185b;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 21px;
+    border: 2px solid #c2185b;
+    text-align: center;
+    line-height: 46px;
+    margin-right: 5px;
+    -webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.21);
+    -moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.21);
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.21);
+}
+
+.steps ul li.disabled a, .steps ul li.done a {
+    color: #9e9e9e;
+}
+
+.disabled .number, .done .number {
+    background-color: #fff;
+    color: #c2185b;
+}
+
+.content {
+    width: 80%;
+    float: left;
+    display: inline;
+    padding-right: 20%;
+}
+
+.content h3, .current-info {
+    display: none;
+}
+
+.content legend {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 40px;
+    color: #333;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.dropdown-content li>a, .dropdown-content li>span {
+    color: #c2185b;
+}
+
+/* label focus color */
+.input-field input:focus + label {
+    color: #c2185b!important;
+}
+/* label underline focus color */
+.input-field input:focus {
+    border-bottom: 1px solid #c2185b!important;
+    box-shadow: 0 1px 0 0 #c2185b!important;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+    color: #c2185b!important;
+}
+
+label.error {
+    float: right!important;
+    right: 0.75rem!important;
+    left: auto!important;
+    color: #F44336!important;
+}
+
+.actions ul li:first-child {
+    display: none;
+}
+
+.actions ul li {
+    margin-right: 20%;
+    float: right;
+}
+
+.actions ul li a {
+    color: #fff;
+    background-color: #c2185b;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    -webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.21);
+    -moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.21);
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.21);
+}
