@@ -102,7 +102,6 @@
             (new Input())
                 ->setLabelText('Registration certificate number')
                 ->setId('registrationCertificateNumber')
-                ->setRequired()
                 ->render();
             ?>
         </div>

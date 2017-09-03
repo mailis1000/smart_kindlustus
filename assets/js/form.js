@@ -24,15 +24,16 @@ var isFieldsVisible = function (fieldId, hideOrShow) {
         '#policyCounty',
         '#policyCity',
         '#policyStreet',
-        '#postCode'],
+        '#policyPostCode'],
     policyCountryFields = ['#policyState'];
 
 $('form select, form input').on('change', function () {
     var $this = $(this),
         isValueTrue = function (value, id) {
-            if ($this.val() === value && $this.attr('id') === id) {
-                return true
-            }
+            return $this.val() === value && $this.attr('id') === id;
+        },
+        isIdMatching = function (id) {
+           return  $this.attr('id') === id;
         };
     /* isValueTrue('value', 'id') */
     if (isValueTrue('1', 'clientType')) {
@@ -42,20 +43,20 @@ $('form select, form input').on('change', function () {
         isFieldsVisible(personalFields, false);
         isFieldsVisible(companyFields, true);
     }
-    if (isValueTrue('1', 'country') && $this.attr('id') === 'country' ) {
+    if (isValueTrue('1', 'country') && isIdMatching('country') ) {
         isFieldsVisible(contactCountryFields, false);
-    } else if (!isValueTrue('1', 'country') && $this.attr('id') === 'country' ) {
+    } else if (!isValueTrue('1', 'country') && isIdMatching('country') ) {
         isFieldsVisible(contactCountryFields, true);
     }
-    if ($this.is(":checked") && $this.attr('id') === 'policyAddress') {
+    if ($this.is(":checked") && isIdMatching('policyAddress') ) {
         isFieldsVisible(policyAddressFields, true);
-    } else if (!$this.is(":checked") && $this.attr('id') === 'policyAddress') {
+    } else if (!$this.is(":checked") && isIdMatching('policyAddress') ) {
         isFieldsVisible(policyAddressFields, false);
     }
-    if (isValueTrue('1', 'policyCountry') && $this.attr('id') === 'policyCountry' ) {
+    if (isValueTrue('1', 'policyCountry') && isIdMatching('policyCountry') ) {
         isFieldsVisible(policyCountryFields, false);
-    } else if (!isValueTrue('1', 'policyCountry') && $this.is(":checked") && $this.attr('id') === 'policyAddress'
-        || !isValueTrue('1', 'policyCountry') && $this.attr('id') === 'policyCountry' ) {
+    } else if (!isValueTrue('1', 'policyCountry') && $this.is(":checked") && isIdMatching('policyAddress')
+        || !isValueTrue('1', 'policyCountry') && isIdMatching('policyCountry') ) {
         isFieldsVisible(policyCountryFields, true);
     }
 });
